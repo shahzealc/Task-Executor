@@ -18,6 +18,7 @@ public:
     std::cout << "[LOG] " << message << std::endl;
   }
 
+  Logger() = default;
   Logger(const Logger &) = delete;
   Logger &operator=(const Logger &) = delete;
 

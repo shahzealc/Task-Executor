@@ -1,4 +1,4 @@
-#include "ComputationTask.h"
+#include "../inc/ComputationTask.h"
 
 ComputationTask::ComputationTask(std::string name, int a, int b)
     : name_(std::move(name)), a_(a), b_(b) {}

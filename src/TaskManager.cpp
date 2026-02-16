@@ -13,7 +13,7 @@ void TaskManager::executeAll() {
   for (auto &task : tasks_) {
     futures.push_back(std::async(std::launch::async, [this, &task]() {
       try {
-        logger_.log("Starting task: " + task->name());
+        Logger::instance().log("Starting task: " + task->name());
         TaskResult result = task->execute();
 
         {
@@ -21,9 +21,9 @@ void TaskManager::executeAll() {
           results_[task->name()] = result;
         }
 
-        logger_.log("Finished task: " + task->name());
+        Logger::instance().log("Finished task: " + task->name());
       } catch (const std::exception &ex) {
-        logger_.log("Error in task " + task->name() + ": " + ex.what());
+        Logger::instance().log("Error in task " + task->name() + ": " + ex.what());
       }
     }));
   }

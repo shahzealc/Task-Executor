@@ -26,7 +26,6 @@ private:
   std::vector<std::unique_ptr<ITask>> tasks_;
   std::map<std::string, TaskResult> results_;
   std::mutex resultsMutex_;
-  Logger logger_;
 };
 
 #endif // TASK_MANAGER_H

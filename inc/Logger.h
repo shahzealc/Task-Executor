@@ -7,10 +7,19 @@
 
 class Logger {
 public:
+
+  static Logger &instance() {
+    static Logger logger;
+    return logger;
+  }
+  
   void log(const std::string &message) {
     std::lock_guard<std::mutex> lock(mutex_);
     std::cout << "[LOG] " << message << std::endl;
   }
+
+  Logger(const Logger &) = delete;
+  Logger &operator=(const Logger &) = delete;
 
 private:
   std::mutex mutex_;

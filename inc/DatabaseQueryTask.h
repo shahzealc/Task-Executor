@@ -6,18 +6,16 @@
 
 class DatabaseQueryTask : public ITask {
 public:
-    DatabaseQueryTask(std::string name,
-                      std::string query,
-                      int recordCount);
+  DatabaseQueryTask(std::string name, std::string query, int recordCount);
 
-    TaskResult execute() override;
+  TaskResult execute() override;
 
-    std::string name() const override;
+  std::string name() const override;
 
 private:
-    std::string name_;
-    std::string query_;
-    int recordCount_;
+  std::string name_;
+  std::string query_;
+  int recordCount_;
 };
 
 #endif // DATABASE_QUERY_TASK_H

@@ -6,16 +6,16 @@
 
 class ComputationTask : public ITask {
 public:
-    ComputationTask(std::string name, int a, int b);
+  ComputationTask(std::string name, int a, int b);
 
-    TaskResult execute() override;
+  TaskResult execute() override;
 
-    std::string name() const override;
+  std::string name() const override;
 
 private:
-    std::string name_;
-    int a_;
-    int b_;
+  std::string name_;
+  int a_;
+  int b_;
 };
 
 #endif // COMPUTATION_TASK_H
